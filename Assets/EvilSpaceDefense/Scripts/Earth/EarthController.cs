@@ -1,11 +1,14 @@
 using UnityEngine;
 
 namespace EvilSpaceDefense {
+    [RequireComponent(typeof(EarthView))]
     public class EarthController : MonoBehaviour {
 
-        private void Start() {
-            m_model.transform = transform;
-            m_view = new EarthView(m_model);
+        private void Awake() {
+            m_view = GetComponent<EarthView>();
+            m_view.model = m_model;
+
+            m_view.onScreenTap.AddListener(ChangeDirection);
         }
 
         [SerializeField]
@@ -13,10 +16,10 @@ namespace EvilSpaceDefense {
         private EarthView m_view;
 
         private void Update() { 
-            m_view.rotate();
+            m_view.Rotate();
         }
 
-        public void changeDirection()  {
+        public void ChangeDirection()  {
             m_model.direction = -m_model.direction;
         }
     }

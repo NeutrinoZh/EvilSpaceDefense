@@ -1,16 +1,24 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace EvilSpaceDefense {
-    public class EarthView
+    public class EarthView : MonoBehaviour
     {
-        public EarthView(EarthModel _model) {
-            m_model = _model;
+        //============================================================//
+        public EarthModel model;
+
+        public void Rotate() {
+            transform.Rotate(Vector3.forward * model.direction);
+        } 
+
+        //============================================================//
+
+        public UnityEvent onScreenTap;
+
+        public void OnScreenTap() {
+            onScreenTap?.Invoke();
         }
 
-        private EarthModel m_model;
-
-        public void rotate() {
-            m_model.transform.Rotate(Vector3.forward * m_model.direction);
-        } 
+        //============================================================//
     }
 }
