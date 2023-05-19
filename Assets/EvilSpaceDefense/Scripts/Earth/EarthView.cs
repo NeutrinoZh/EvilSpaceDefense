@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace EvilSpaceDefense {
+    [RequireComponent(typeof(EarthController))]
     public class EarthView : MonoBehaviour
     {
         //============================================================//
