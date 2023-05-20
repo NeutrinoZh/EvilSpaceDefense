@@ -117,5 +117,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_model:
-    velocity: 18
+    velocity: 30
     direction: {x: 0, y: 0, z: 0}
