@@ -30,5 +30,12 @@ namespace EvilSpaceDefense {
         public Transform BulletParent {
             get => m_bullet_parent;
         }
+
+        [SerializeField]
+        private Transform m_asteroid_parent = null;
+
+        public Transform AsteroidParent {
+            get => m_asteroid_parent;
+        }
     }
 }

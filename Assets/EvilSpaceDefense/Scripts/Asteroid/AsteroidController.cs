@@ -1,23 +1,23 @@
 using UnityEngine;
 
 namespace EvilSpaceDefense {
-    [RequireComponent(typeof(BulletView))]
-    public class BulletController : MonoBehaviour
+    [RequireComponent(typeof(AsteroidView))]
+    public class AsteroidController : MonoBehaviour
     {
         private void Awake()
         {
-            transform.parent = MainPlayScene.Instance.BulletParent;
+            transform.parent = MainPlayScene.Instance.AsteroidParent;
 
-            m_view = GetComponent<BulletView>();
+            m_view = GetComponent<AsteroidView>();
             m_view.model = m_model;
 
-            m_view.onCreateBullet.AddListener(setDirection);
+            m_view.onCreateAsteroid.AddListener(setDirection);
         }
 
         [SerializeField]
-        private BulletModel m_model;
-
-        private BulletView m_view;
+        private AsteroidModel m_model;
+    
+        private AsteroidView m_view;
 
         private void Update()
         {

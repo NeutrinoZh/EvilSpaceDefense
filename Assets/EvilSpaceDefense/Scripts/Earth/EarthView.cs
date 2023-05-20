@@ -6,6 +6,8 @@ namespace EvilSpaceDefense {
     public class EarthView : MonoBehaviour
     {
         //============================================================//
+        
+        [HideInInspector]
         public EarthModel model;
 
         public void Rotate() {

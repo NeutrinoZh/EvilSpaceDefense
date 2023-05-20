@@ -7,6 +7,7 @@ namespace EvilSpaceDefense {
     {
         //============================================================//
        
+        [HideInInspector]
         public BulletModel model;
 
         public void move() {
@@ -17,8 +18,8 @@ namespace EvilSpaceDefense {
     
         public UnityEvent<Vector2> onCreateBullet;
 
-        public void OnCreateBullet(Vector2 _velocity) {
-            onCreateBullet?.Invoke(_velocity);
+        public void OnCreateBullet(Vector2 _direction) {
+            onCreateBullet?.Invoke(_direction);
         }
     }
 }
