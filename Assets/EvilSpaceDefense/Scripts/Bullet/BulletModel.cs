@@ -10,6 +10,7 @@ namespace EvilSpaceDefense {
 
         public float Velocity { get => velocity; }
 
+        [HideInInspector]
         public Vector3 direction;
     }
 }

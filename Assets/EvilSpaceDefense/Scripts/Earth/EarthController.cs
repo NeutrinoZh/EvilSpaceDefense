@@ -35,7 +35,9 @@ namespace EvilSpaceDefense {
 
         //==========================================//
 
-        const float DELAY_BEFORE_CHANGE_DIRECTION = 0.2f;
+        private const float DELAY_BEFORE_CHANGE_DIRECTION = 0.2f;
+
+        private Coroutine m_change_direction_coroutine;
 
         //==========================================//
 
@@ -44,7 +46,10 @@ namespace EvilSpaceDefense {
         }
 
         private void ChangeDirection()  {
-            StartCoroutine(ChangeDirectionByDelay(-m_model.direction));
+            if (m_change_direction_coroutine == null)
+                m_change_direction_coroutine =
+                    StartCoroutine(ChangeDirectionByDelay(-m_model.direction));
+                
             m_model.direction = 0;
         }
 
@@ -53,6 +58,7 @@ namespace EvilSpaceDefense {
         private IEnumerator ChangeDirectionByDelay(int _new_direction) {
             yield return new WaitForSeconds(DELAY_BEFORE_CHANGE_DIRECTION);
             m_model.direction = _new_direction;
+            m_change_direction_coroutine = null;
         }
 
         //==========================================//
