@@ -16,6 +16,7 @@ namespace EvilSpaceDefense {
     
         //============================================================//
 
+        [HideInInspector]
         public UnityEvent<Vector2> onCreateAsteroid;
 
         public void OnCreateAsteroid(Vector2 _direction) {

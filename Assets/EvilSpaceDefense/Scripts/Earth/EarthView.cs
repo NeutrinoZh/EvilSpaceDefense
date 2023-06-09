@@ -16,6 +16,7 @@ namespace EvilSpaceDefense {
 
         //============================================================//
 
+        [HideInInspector]
         public UnityEvent onScreenTap;
 
         public void OnScreenTap() {

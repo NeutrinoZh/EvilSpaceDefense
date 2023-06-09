@@ -16,6 +16,7 @@ namespace EvilSpaceDefense {
          
         //============================================================//
     
+        [HideInInspector]
         public UnityEvent<Vector2> onCreateBullet;
 
         public void OnCreateBullet(Vector2 _direction) {
